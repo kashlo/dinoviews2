@@ -1,0 +1,13 @@
+-if object.errors.any?
+  .panel.panel-danger
+    .panel-body
+      %strong.text-danger
+        = "#{pluralize(object.errors.count, "error")} prohibited this post from being saved:"
+      %ul
+        -object.errors.to_hash.each do |key, value|
+          %li
+            %strong
+              =key
+              \:
+            -value.each do |v|
+              =v

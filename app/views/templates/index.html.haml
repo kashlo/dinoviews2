@@ -1,0 +1,18 @@
+.row
+  .col-md-12
+    %h1 Templates list
+.row
+  .col-md-12.right
+    =link_to 'Add template', new_template_path, class: 'btn btn-info'
+.row
+  .col-md-12
+    %table.table.table-bordered.table-hover
+      %thead
+        %tr
+          %th Id
+          %th Name
+      - @templates.each do |template|
+        %tbody
+          %tr
+            %td= template.id
+            %td= link_to template.name, template_path(template)

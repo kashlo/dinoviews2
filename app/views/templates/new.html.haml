@@ -1,0 +1,19 @@
+.row
+  .col-md-6
+    =render partial: 'shared/errors', locals: {object: @template}
+
+    =form_for(@template) do |f|
+      .form-group
+        =f.label :name
+        =f.text_field :name, class: 'form-control'
+        %p.help-block
+          any name
+
+      .form-group
+        =f.label :body
+        =f.text_area :body, class: 'form-control'
+        %p.help-block
+          template body
+
+      .form-group
+        =f.submit 'Create', class: 'btn btn-info'
